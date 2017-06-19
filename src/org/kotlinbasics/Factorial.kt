@@ -23,24 +23,29 @@ class TestFactorial {
 		
 		// if we use int for this it will give a minus value
 		// at complie time it will be Kotlin Int,
-		// but at run time it will become an lower case int,
+		// but at run time it will become a lower case int,
 		// which couldn't hold the factorial of 19,
-		// we could use Big Decemal
-		// also note that BigDecemal constructor doesn't have the "new" key word
+		// we could use Big Decimal
+		// also note that BigDecimal constructor doesn't have the "new" key word
 		assertThat(factorial(BigDecimal(19)), equalTo(BigDecimal(121645100408832000)))
+		
+		// it will give a stack overflow error 
+		println(factorial(BigDecimal(50_000)))
+		
 		                                  
 	}
 }
 
 
 // inline exaample
-// introduction to BigDecimal 
-fun factorial(n: BigDecimal): BigDecimal {
-	return if (n <= 1) ONE else factorial(n - 1) * n
+// introduction to BigDecimal,and tail recursion optimisation  
+tailrec fun factorial(n: BigDecimal, result: BigDecimal =ONE): BigDecimal {
+	return if (n <= 1) result  else factorial(n - 1, result * n)
 
 }
 
 // Use of extention fucntion, key word operator is needed
+// tail recursion optimisation for more info : https://stackoverflow.com/questions/33923/what-is-tail-recursion
 operator fun BigDecimal.compareTo(n: Int): Int {
 	return this.compareTo(BigDecimal(n))
 }
