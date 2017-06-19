@@ -13,10 +13,10 @@ fun main(args: Array<String>) {
 	println(factorial(5))
 }
 
-fun factorial(n: Int): Int{
-	if (n <= 1){
-		return 1
-	}else{
-		return factorial(n-1) * n
+fun factorial(n: Int): Int {
+	return if (n <= 1) {
+		1
+	} else {
+		factorial(n - 1) * n
 	}
 }
