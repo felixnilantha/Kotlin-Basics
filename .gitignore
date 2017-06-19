@@ -20,4 +20,5 @@ workspace.xml
 /js/js.translator/testData/**/out/
 .gradle/
 build/
+bin/
 !**/src/**/build
