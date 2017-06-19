@@ -3,6 +3,8 @@ package org.kotlinbasics
 import org.junit.Test
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.CoreMatchers.equalTo
+import java.math.BigDecimal
+import java.math.BigDecimal.ONE
 
 /* to get a better understanding about factorial please refere to the wiki link
  	https://en.wikipedia.org/wiki/Factorial
@@ -12,18 +14,27 @@ class TestFactorial {
 
 	@Test fun calculateFactorial() {
 
-		assertThat(factorial(0), equalTo(1))
-		assertThat(factorial(1), equalTo(1))
-		assertThat(factorial(2), equalTo(2))
-		assertThat(factorial(3), equalTo(6))
-		assertThat(factorial(4), equalTo(24))
-		assertThat(factorial(5), equalTo(120))
+		assertThat(factorial(BigDecimal(0)), equalTo(BigDecimal(1)))
+		assertThat(factorial(BigDecimal(1)), equalTo(BigDecimal(1)))
+		assertThat(factorial(BigDecimal(2)), equalTo(BigDecimal(2)))
+		assertThat(factorial(BigDecimal(3)), equalTo(BigDecimal(6)))
+		assertThat(factorial(BigDecimal(4)), equalTo(BigDecimal(24)))
+		assertThat(factorial(BigDecimal(5)), equalTo(BigDecimal(120)))
+		
+		// if we use int for this it will give a minus value
+		// at complie time it will be Kotlin Int,
+		// but at run time it will become an lower case int,
+		// which couldn't hold the factorial of 19,
+		// we could use Big Decemal
+		assertThat(factorial(BigDecimal(19)), equalTo(BigDecimal(121645100408832000)))
+		                                  
 	}
 }
 
 
-// inline exaample 
-fun factorial(n: Int): Int {
-	return if (n <= 1) 1 else factorial(n - 1) * n
+// inline exaample
+// introduction to BigDecimal 
+fun factorial(n: BigDecimal): BigDecimal {
+	return if (n <= ONE) ONE else factorial(n - ONE) * n
 
 }
