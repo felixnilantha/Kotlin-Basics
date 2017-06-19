@@ -26,6 +26,7 @@ class TestFactorial {
 		// but at run time it will become an lower case int,
 		// which couldn't hold the factorial of 19,
 		// we could use Big Decemal
+		// also note that BigDecemal constructor doesn't have the "new" key word
 		assertThat(factorial(BigDecimal(19)), equalTo(BigDecimal(121645100408832000)))
 		                                  
 	}
@@ -35,6 +36,15 @@ class TestFactorial {
 // inline exaample
 // introduction to BigDecimal 
 fun factorial(n: BigDecimal): BigDecimal {
-	return if (n <= ONE) ONE else factorial(n - ONE) * n
+	return if (n <= 1) ONE else factorial(n - 1) * n
 
 }
+
+// Use of extention fucntion, key word operator is needed
+operator fun BigDecimal.compareTo(n: Int): Int {
+	return this.compareTo(BigDecimal(n))
+}
+
+operator fun BigDecimal.minus(n: Int) = this.minus(BigDecimal(n))
+
+
