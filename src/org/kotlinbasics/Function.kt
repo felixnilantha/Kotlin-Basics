@@ -27,6 +27,16 @@ fun main(args: Array<String>) {
 	
 	customPrintMessage.println()
 	
+	
+	// Default values for parameters
+	
+	fun greeting4(message: String =" Defaul value") : String{
+		
+		return "This is the $message"
+	}
+	// This will print the default value
+	println(greeting4())
+	
 }
 
 
