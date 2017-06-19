@@ -19,6 +19,14 @@ fun main(args: Array<String>) {
 	val message ="declaration 3"
 	println(message.greeting3())
 	
+	
+	// creating our own fucntions
+	
+	fun String.println() = println(this)
+	val customPrintMessage ="Custom Print line"
+	
+	customPrintMessage.println()
+	
 }
 
 
