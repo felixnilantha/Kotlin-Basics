@@ -38,6 +38,14 @@ fun main(args: Array<String>) {
 	println(greeting4())
 	
 }
+  // function can be private and internal, by default everything is public 
+	
+	private fun privateFunction(message: String = "function") : String {
+		return "private $message"
+	}
 
+	internal fun internalFunction(message: String = "function"): String{
+		return "internal $message"
+	}
 
 
