@@ -32,6 +32,7 @@ fun main(args: Array<String>) {
 		if(x % 2 == 0){
 			continue
 		}
+		
 		println("Odd : = $x")
 		
 		if (x==7) break
