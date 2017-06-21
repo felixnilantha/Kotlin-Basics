@@ -21,6 +21,7 @@ workspace.xml
 .gradle/
 build/
 bin/
+target/
 !**/src/**/build
 target/classes/META-INF/main.kotlin_module
 target/classes/META-INF/MANIFEST.MF
