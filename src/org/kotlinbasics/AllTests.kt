@@ -66,6 +66,15 @@ public class AllTests {
 		assertThat(firstThree.removeAt(1), equalTo("VIC"))
 		
 		
+		// Map<key, value>
+		
+		var tennisSeedsMap = mutableMapOf(1 to "Murray", 2 to "Nadal", 3 to "Wawrinka", 4 to "Djokovic", 5 to "Federer" )
+		assertThat(tennisSeedsMap.get(1), equalTo("Murray"))
+		tennisSeedsMap.put(6, "Raonic")
+		assertThat(tennisSeedsMap.get(6), equalTo("Raonic"))
+		assertThat(tennisSeedsMap.remove(3), equalTo("Wawrinka"))
+		
+		
 		
 	}
 
