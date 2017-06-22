@@ -1,9 +1,7 @@
 package org.kotlinbasics.Functions
 
 // Under construction
-import org.junit.runner.RunWith
-import org.junit.runners.Suite
-import org.junit.runners.Suite.SuiteClasses
+
 import org.junit.Test
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.CoreMatchers.equalTo
@@ -11,7 +9,7 @@ import org.hamcrest.CoreMatchers.equalTo
 
 public class AllTests {
 
-	fun tests() {
+	@Test fun tests() {
 		// add
 		assertThat(add(1, 2), equalTo(3))
 
@@ -23,6 +21,14 @@ public class AllTests {
 		//expression
 		val result = { x: Int, y: Int -> ((x + y) * 10) }
 		assertThat(result(1, 2), equalTo(30))
+
+		val input2 = returnNumExpression(2)
+		assertThat(input2(3), equalTo(8))
+
+		
+		
+
+
 	}
 
 

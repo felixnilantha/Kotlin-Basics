@@ -51,17 +51,17 @@ fun main(args: Array<String>) {
 	println("x + y result for default value is ${add()}")
 
 	// return pair	
-	val (arg1,arg2) = returnPair(1)
+	val (arg1, arg2) = returnPair(1)
 	println("$arg1 and $arg2")
 
 	// sum values
-	println("Sum = ${sum(1,2,3,4,5)}")
-	
+	println("Sum = ${sum(1, 2, 3, 4, 5)}")
+
 	// expression
-	
-	val result = {x: Int, y : Int -> ((x + y) * 10)}
-	println("result is ${result(1,2)}")
-	
+
+	val result = { x: Int, y: Int -> ((x + y) * 10) }
+	println("result is ${result(1, 2)}")
+
 
 }
 
@@ -83,11 +83,11 @@ fun returnPair(n: Int = 10): Pair<Int, Int> {
 }
 
 
-fun sum(vararg n : Int) : Int{
-	
-	var sum=0
+fun sum(vararg n: Int): Int {
+
+	var sum = 0
 	n.forEach { x -> sum += x }
-	
+
 	return sum
 }
 
